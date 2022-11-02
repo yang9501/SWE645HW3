@@ -1,0 +1,11 @@
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "streetAddress": "1234 Oak Mill Rd",
+  "city": "Anytown",
+  "state": "VA",
+  "zipCode": "22180",
+  "phoneNumber": "1111111111",
+  "emailAddress": "test@gmail.com",
+  "dateOfSurvey": "2/17/2022"
+}

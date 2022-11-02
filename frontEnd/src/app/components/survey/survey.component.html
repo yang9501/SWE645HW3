@@ -1,0 +1,125 @@
+<div class="w3-content w3-padding" style="max-width:1564px">
+  <div class="w3-container w3-padding-32" id="projects">
+    <h1 class="w3-padding-16">CS Department Survey</h1>
+  </div>
+
+  <div class="w3-container w3-padding-32">
+  <form (ngSubmit)="onSubmit()" #surveyForm="ngForm" autocomplete="on">
+
+    <table>
+      <tr>
+        <td>
+          <label>First Name*:</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="survey.firstName" id="firstName" placeholder="John" name="firstName" required autofocus #firstName="ngModel" value=""/> <span *ngIf="firstName.errors?.['required']">First name is required.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Last Name*:</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="survey.lastName" id="lastNameField" placeholder="Smith" name="lastName" #lastName="ngModel" value="" required/> <span *ngIf="lastName.errors?.['required']">Last name is required.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Street Address*:</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="survey.streetAddress" id="streetAddressField" placeholder="1234 Oak Mill Rd" required value="" #streetAddress="ngModel" name="streetAddress"/> <span *ngIf="streetAddress.errors?.['required']">Street Address is required.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>City*:</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="survey.city" id="cityField" placeholder="Anytown" name="city" #city="ngModel" required value=""/> <span *ngIf="city.errors?.['required']">City is required.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>State*:</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="survey.state" id="stateField" placeholder="VA" name="state" #state="ngModel" required value=""/> <span *ngIf="state.errors?.['required']">State is required.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Zip Code*:</label>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="survey.zipCode" id="zipCodeField" placeholder="11111" required name="zipCode" #zipCode="ngModel" value=""/> <span *ngIf="zipCode.errors?.['required']">Zip code is required.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Telephone Number*:</label>
+        </td>
+        <td>
+          <input type="tel" [(ngModel)]="survey.phoneNumber" placeholder="(###) ###-####"  #phoneNumber="ngModel" name="telephoneNumber" required value=""/> <span *ngIf="phoneNumber.errors?.['required']">Phone number is required.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Email Address*:</label>
+        </td>
+        <td>
+          <input type="email" [(ngModel)]="survey.emailAddress" id="emailAddressField" placeholder="name@domain.com" #emailAddress="ngModel" name="email" required value=""/> <span *ngIf="emailAddress.errors?.['required']">Email Address is required.</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Date of Survey*:</label>
+        </td>
+        <td>
+          <input type="date" [(ngModel)]="survey.dateOfSurvey" placeholder="yyyy-mm-dd" #dateOfSurvey="ngModel" name="dateOfSurvey" required/> <span *ngIf="dateOfSurvey.errors?.['required']">Date of survey is required.</span>
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td>
+          Things you liked:
+        </td>
+        <td>
+          <div *ngFor="let liked of likedData;">
+            <input type="checkbox" [ngModelOptions]="{standalone: true}" [(ngModel)]="liked.selected"/> {{liked.name}}
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          How did you become interested in the University?
+        </td>
+        <td>
+          <label><input type="radio" value="Friends" id="interest" name="interest" [(ngModel)]="survey.interest" #interest="ngModel"/> Friends  </label>
+          <label><input type="radio" value="Television" id="interest" name="interest" [(ngModel)]="survey.interest" #interest="ngModel"/> Television  </label>
+          <label><input type="radio" value="Internet" id="interest" name="interest" [(ngModel)]="survey.interest" #interest="ngModel"/> Internet  </label>
+          <label><input type="radio" value="Other" id="interest" name="interest" [(ngModel)]="survey.interest" #interest="ngModel"/> Other</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Would you recommend this school to other prospective students?
+        </td>
+        <td>
+          <select [(ngModel)]="survey.recommend" #recommend="ngModel" name="recommend">
+            <option selected="selected">Very Likely</option>
+            <option>Likely</option>
+            <option>Unlikely</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <p>Additional Comments:</p>
+    <textarea rows="4" cols="20" id="comments" name="comments" [(ngModel)]="survey.comments" #comments="ngModel"></textarea>
+    <br>
+    <input type="submit" value="Submit" [disabled]="!surveyForm.form.valid"/>
+    <input type="reset" value="Reset" (click)="surveyForm.reset()"/>
+  </form>
+  </div>

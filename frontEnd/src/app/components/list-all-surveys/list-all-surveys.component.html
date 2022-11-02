@@ -1,0 +1,42 @@
+<!-- HTML template for listing all surveys submitted so far -->
+
+<div style="overflow: auto;white-space: nowrap;">
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Survey ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Street Address</th>
+        <th scope="col">City</th>
+        <th scope="col">State</th>
+        <th scope="col">Zip Code</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email Address</th>
+        <th scope="col">Date</th>
+        <th scope="col">Liked</th>
+        <th scope="col">Interests</th>
+        <th scope="col">Would Recommend</th>
+        <th scope="col">Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let survey of surveys">
+        <td>{{ survey.id }}</td>
+        <td>{{ survey.firstName }}</td>
+        <td>{{ survey.lastName }}</td>
+        <td>{{ survey.streetAddress }}</td>
+        <td>{{ survey.city }}</td>
+        <td>{{ survey.state }}</td>
+        <td>{{ survey.zipCode }}</td>
+        <td>{{ survey.phoneNumber }}</td>
+        <td>{{ survey.emailAddress }}</td>
+        <td>{{ survey.dateOfSurvey }}</td>
+        <td>{{ survey.liked }}</td>
+        <td>{{ survey.interest }}</td>
+        <td>{{ survey.recommend }}</td>
+        <td>{{ survey.comments }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
