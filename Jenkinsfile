@@ -51,8 +51,8 @@ pipeline {
         script {
           //Jenkins uses the 'jenkins' user on the host to perform actions on the host.  .kube/config is a folder that grants access to perform kubectl actions on the cluster using the Rancher management host as a proxy, using the Rancher credentials.  I had to put the config file into a folder in the jenkins user directory, otherwise the jenkins user wouldn't have the permission to view and use the config file.
           sh 'kubectl --kubeconfig /var/lib/jenkins/.kube/config version'
-          sh 'kubectl --kubeconfig /var/lib/jenkins/.kube/config set image deployment/swe645hw3 container-0=yang9501/frontend:latest'
-          sh 'kubectl --kubeconfig /var/lib/jenkins/.kube/config set image deployment/swe645hw3 container-0=yang9501/surveysystem:latest'
+          sh 'kubectl --kubeconfig /var/lib/jenkins/.kube/config set image deployment/swe645hw2 container-0=yang9501/frontend:latest'
+          sh 'kubectl --kubeconfig /var/lib/jenkins/.kube/config set image deployment/swe645hw2 container-0=yang9501/surveysystem:latest'
           //After the cluster receives the image, you have to redeploy the pods in order for the new image to take effect
           sh 'kubectl --kubeconfig /var/lib/jenkins/.kube/config rollout restart deployment/swe645hw2'
         }
