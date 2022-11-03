@@ -1,12 +1,10 @@
 pipeline {
   agent any
+  tools {
+    maven 'maven-3.8.6'
+  }
   stages {
     stage("Building the back end Image"){
-      agent {
-        docker {
-          image 'maven:3.8.1-adoptopenjdk-11'
-        }
-      }
       steps{
         script {
           git 'https://github.com/yang9501/SWE645HW3.git'
