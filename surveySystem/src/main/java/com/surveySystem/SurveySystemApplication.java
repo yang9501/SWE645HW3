@@ -9,7 +9,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class SurveySystemApplication extends SpringBootServletInitializer{
 	@Override
   protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-      return application.sources(SurveySystemApplication.class);
+      return application.sources(App.class);
   }
 
 	public static void main(String[] args) {
