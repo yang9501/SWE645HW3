@@ -9,7 +9,7 @@ pipeline {
       }
       steps{
         script {
-          git 'https://github.com/yang9501/SWE645HW2.git'
+          git 'https://github.com/yang9501/SWE645HW3.git'
           sh 'pwd'
           //'mvn clean package' deposits the war file into the surveySystem/target folder as 'surveySystem-0.0.1-SNAPSHOT.war'
           sh 'mvn clean package'
