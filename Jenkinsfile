@@ -10,11 +10,13 @@ pipeline {
           git 'https://github.com/yang9501/SWE645HW3.git'
           sh 'pwd'
           //'mvn clean package' deposits the war file into the surveySystem/target folder as 'surveySystem-0.0.1-SNAPSHOT.war'
+          sh 'cd ./surveySystem'
+          sh 'pwd'
           sh 'mvn clean package'
           sh 'ls'
           sh 'echo ${BUILD_TIMESTAMP}'
           sh 'docker login -u yang9501 -p ${DOCKERHUB_PASS}'
-          sh 'docker build -t yang9501/studentsurvey:latest ./surveySystem'
+          sh 'docker build -t yang9501/studentsurvey:latest .'
         }
       }
     }
