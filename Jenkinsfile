@@ -12,6 +12,7 @@ pipeline {
           sh 'ls'
           //'mvn clean package' deposits the war file into the surveySystem/target folder as 'surveySystem-0.0.1-SNAPSHOT.war'
           sh 'cd surveySystem'
+          sh 'ls'
           sh 'mvn clean package'
           sh 'ls'
           sh 'echo ${BUILD_TIMESTAMP}'
