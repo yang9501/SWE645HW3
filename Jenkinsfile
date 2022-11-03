@@ -9,9 +9,9 @@ pipeline {
         script {
           git 'https://github.com/yang9501/SWE645HW3.git'
           sh 'pwd'
+          sh 'ls'
           //'mvn clean package' deposits the war file into the surveySystem/target folder as 'surveySystem-0.0.1-SNAPSHOT.war'
-          sh 'cd ./surveySystem'
-          sh 'pwd'
+          sh 'cd surveySystem'
           sh 'mvn clean package'
           sh 'ls'
           sh 'echo ${BUILD_TIMESTAMP}'
