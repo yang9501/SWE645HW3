@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("Building the back end Image"){
       agent {
-        docker {
+        any {
           image 'maven:3.8.1-adoptopenjdk-11'
         }
       }
@@ -11,7 +11,7 @@ pipeline {
         script {
           git 'https://github.com/yang9501/SWE645HW2.git'
           sh 'pwd'
-          //'mvn clean package' deposits the war file into the surveySystem/target folder as 'surveySystem-0.0.1-SNAPSHOT.war' 
+          //'mvn clean package' deposits the war file into the surveySystem/target folder as 'surveySystem-0.0.1-SNAPSHOT.war'
           sh 'mvn clean package'
           sh 'ls'
           sh 'echo ${BUILD_TIMESTAMP}'
