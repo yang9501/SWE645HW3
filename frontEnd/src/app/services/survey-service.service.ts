@@ -15,10 +15,10 @@ export class SurveyServiceService {
 
   constructor(private http: HttpClient) {
     //base URL
-    this.surveyUrl = 'http://localhost:8080/surveyController/';
+    this.surveyUrl = 'http://35.231.191.171:8080/surveyController/';
   };
 
-  //Retrieves list of all surveys submitted 
+  //Retrieves list of all surveys submitted
   public getAllSurveys(): Observable<Survey[]> {
     return this.http.get<Survey[]>(this.surveyUrl + 'getAllSurveys');
   };
