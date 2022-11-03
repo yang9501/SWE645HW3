@@ -15,7 +15,7 @@ export class SurveyServiceService {
 
   constructor(private http: HttpClient) {
     //base URL
-    this.surveyUrl = 'http://35.231.191.171:8080/surveyController/';
+    this.surveyUrl = '35.231.191.171:8080/surveyController/';
   };
 
   //Retrieves list of all surveys submitted
