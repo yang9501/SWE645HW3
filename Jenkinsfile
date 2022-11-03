@@ -55,7 +55,7 @@ pipeline {
           sh 'kubectl --kubeconfig /var/lib/jenkins/.kube/config set image deployment/frontend container-0=yang9501/surveysystem:latest'
           //After the cluster receives the image, you have to redeploy the pods in order for the new image to take effect
           sh 'kubectl --kubeconfig /var/lib/jenkins/.kube/config rollout restart deployment/swe645hw2'
-          sh 'kubectl --kubeconfig /var/lib/jenkins/.kube/config rollout restart deployment/front'
+          sh 'kubectl --kubeconfig /var/lib/jenkins/.kube/config rollout restart deployment/frontend'
         }
       }
     }
