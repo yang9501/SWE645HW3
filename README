@@ -1,0 +1,48 @@
+SWE645HW3
+
+Justin Yang - jyang52 - Implemented the project solo
+
+Please note that the extra credit has been implemented with ArgoCD
+
+URL of homepage: http://34.23.214.202/components/home
+Github repository: https://github.com/yang9501/SWE645HW3
+
+Please see the Setup Instructions for the project installation steps!  The instructions assume that the reader has implemented the steps from HW2, found here: https://github.com/yang9501/SWE645HW2
+
+Tools used:
+Git/Github
+Docker/Dockerhub
+Jenkins on an AWS EC2 host running Ubuntu 20.02
+Rancher on an AWS EC2 host running Ubuntu 20.02
+GKE Cluster on Google Cloud
+Spring Boot 3.0.0
+Java 11
+Angular 14.0.6
+ArgoCD
+
+
+Lessons learned:
+1. First and foremost, DO NOT set the user and password to your RDS instance to 'admin' and 'password'.  Someone stumbled upon my RDS IP, deleted the table,
+   and tried to ransom the contents by demanding a bitcoin payment by creating a new table with the demand.  I restored a backup instance and changed the password.
+2. After setting up your RDS, you need to manually create a schema for your backend to connect to.  Connect to your RDS with MySQL Workbench and create a schema.
+3. Have to add/edit an inbound rule for your RDS for 3306, changing the source to IPv4 Anywhere
+4. Need to create a nginx configuration file in the front end directory.
+5. The maven build command was not working from the Jenkinsfile. The jenkins user in the EC2 instance did not have the required permissions. I created a new jenkins user and added it to the root group.
+6. At some point, the Jenkins builds started failing due to disk usage limits in the Jenkins host.  I've had to periodically clear the host of previously build images to free space.
+
+References:
+https://spring.io/guides/gs/spring-boot-docker/
+https://hackernoon.com/how-to-deploy-a-java-springboot-app-with-mysql-in-aws-for-free-dn3x34gg
+https://stackoverflow.com/questions/64074528/how-to-create-war-file-of-angular-project
+https://www.sqlshack.com/how-to-configure-amazon-rds-mysql-environment/
+https://medium.com/@ryanzhou7/using-aws-rds-for-your-spring-boot-app-ca8f4b09c9b8
+https://www.jenkins.io/doc/book/pipeline/syntax/
+https://stackoverflow.com/questions/62253474/jenkins-invalid-agent-type-docker-specified-must-be-one-of-any-label-none
+https://devopspilot.com/content/jenkins/tutorials/common/03-global-tool-configurations
+https://javascript.plainenglish.io/how-to-dockerize-angular-application-3cd67e963832
+https://containerjournal.com/features/deploying-angular-apps-to-a-kubernetes-cluster/
+https://stackoverflow.com/questions/44919972/deploying-spring-war-to-tomcat-based-docker
+https://www.docker.com/blog/kickstart-your-spring-boot-application-development/
+https://www.javainuse.com/devOps/docker/docker-jar
+https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#using-environment-variables
+https://argo-cd.readthedocs.io/en/stable/getting_started/
