@@ -5,7 +5,10 @@ Justin Yang - jyang52 - Implemented the project solo
 Please note that the extra credit has been implemented with ArgoCD
 
 URL of homepage: http://34.23.214.202/components/home
-Github repository: https://github.com/yang9501/SWE645HW3
+Github repositories:
+  1. https://github.com/yang9501/SWE645HW3
+  2. https://github.com/yang9501/swe645hw3deployfrontend
+  3. https://github.com/yang9501/swe645hw3deploysurveysystem
 
 Please see the Setup Instructions for the project installation steps!  The instructions assume that the reader has implemented the steps from HW2, found here: https://github.com/yang9501/SWE645HW2
 
@@ -20,6 +23,14 @@ Java 11
 Angular 14.0.6
 ArgoCD
 
+Link to videos:
+Project Demo and Overview:
+RDS Setup:
+Front end code walkthrough: https://youtu.be/y7JYLhAYh-8
+Back end code walkthrough: https://youtu.be/J73fkOMYwVU
+Dockerfiles: 
+Jenkins and Jenkinsfile:
+ArgoCD and deployment repo:
 
 Lessons learned:
 1. First and foremost, DO NOT set the user and password to your RDS instance to 'admin' and 'password'.  Someone stumbled upon my RDS IP, deleted the table,
