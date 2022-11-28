@@ -5,6 +5,7 @@ Justin Yang - jyang52 - Implemented the project solo
 Please note that the extra credit has been implemented with ArgoCD
 
 URL of homepage: http://34.23.214.202/components/home
+URL of ArgoCD dashboard: http://34.139.66.103:80
 Github repositories:
   1. https://github.com/yang9501/SWE645HW3
   2. https://github.com/yang9501/swe645hw3deployfrontend
@@ -24,13 +25,12 @@ Angular 14.0.6
 ArgoCD
 
 Link to videos:
-Project Demo and Overview:
-RDS Setup:
+Project Demo and Overview: https://youtu.be/JxZyNNKvpyM
+RDS Setup: https://youtu.be/62QfE9PgyBA
 Front end code walkthrough: https://youtu.be/y7JYLhAYh-8
 Back end code walkthrough: https://youtu.be/J73fkOMYwVU
-Dockerfiles: 
-Jenkins and Jenkinsfile:
-ArgoCD and deployment repo:
+Jenkins and Jenkinsfile: https://youtu.be/kgEt85RtET4
+ArgoCD and deployment repo overview: https://youtu.be/Kyr7bdR_z_Q
 
 Lessons learned:
 1. First and foremost, DO NOT set the user and password to your RDS instance to 'admin' and 'password'.  Someone stumbled upon my RDS IP, deleted the table,
